@@ -354,10 +354,22 @@
        */
       if ( $pagination.get(0) ) {
         if ( $pagination.hasClass('wp-tiles-pagination-ajax') ) {
-          $pagination.click(function(e){
-            e.preventDefault();
-            grid.nextPage();
-          });
+          if ( $pagination.hasClass('wp-tiles-pagination-ajax-auto') ) {
+            $(window).scroll(function(e){
+              var footerId = $pagination.data("bottom-id");
+              var total_footer = $(footerId).height();
+              if ($(window).scrollTop() > ($(document).height() - $(window).height()) - total_footer) {
+                e.preventDefault();
+                grid.nextPage()
+              }
+            });
+
+          } else {
+            $pagination.click(function(e){
+                      e.preventDefault();
+                      grid.nextPage();
+                    });
+          }
         }
       }
 

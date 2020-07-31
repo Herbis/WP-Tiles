@@ -52,6 +52,8 @@ class Options
         'image_effect'  => 'none',
 
         'pagination'    => 'ajax',
+        'autoload'       => false,
+        'bottom_id'       => '#site-footer',
 
         'legacy_styles' => false,
 

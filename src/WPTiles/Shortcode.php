@@ -73,6 +73,8 @@ class Shortcode
             'animate_template' => $defaults['animate_template'],
 
             'pagination'       => $defaults['pagination'],
+            'autoload'         => $defaults['autoload'],
+            'bottom_id'        => $defaults['bottom_id'],
 
             'extra_classes'    => $defaults['extra_classes'],
             'extra_classes_grid_selector'
@@ -143,6 +145,8 @@ class Shortcode
             'animate_template' => ( $atts['animated'] && $atts['animate_template'] ),
 
             'pagination'       => $atts['pagination'],
+            'autoload'       => $atts['autoload'],
+            'bottom_id'       => $atts['bottom_id'],
 
             'full_width'       => $atts['full_width']
         );
